@@ -12,7 +12,7 @@ const ModalQr = ({modal, toggle}) => {
   const handleDecode = (result) => {
     // Extraer la parte de la URL después de 'https://demo-sist-bebidas-qr-emp.vercel.app/ordenes/'
     const parteDespuesDeOrdenes = result.substring('https://localhost:3001/'.length);
-
+    alert(parteDespuesDeOrdenes)
     // Redireccionar a la nueva URL
     navigate(parteDespuesDeOrdenes);
   };
