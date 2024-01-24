@@ -8,17 +8,6 @@ const ModalQr = ({modal, toggle}) => {
     const history = useNavigate();
     const [ result, setResult ] = useState(null)
 
-    function cambiarDominio(UrlAntigua, nuevoDominio) {
-      // Reemplazar el dominio actual con el nuevo dominio
-      let nuevaUrl = UrlAntigua.replace(/^https:\/\/[^/]+/, `https://${nuevoDominio}`);
-  
-      return nuevaUrl;
-  }
-  
-  // Ejemplo de uso
-  let nuevoDominio = "demo-sist-bebidas-qr-emp.vercel.app";
-  
-  let urlModificada = cambiarDominio(result, nuevoDominio);
     
   return (
     <Modal isOpen={modal} toggle={toggle}>
@@ -31,7 +20,7 @@ const ModalQr = ({modal, toggle}) => {
           
             <Col sm='12' >
                 <QrScanner
-                    onDecode={(result) => history(urlModificada )}
+                    onDecode={(result) => history(result.substring(23) )}
                     onError={(error) => setResult(error?.message)}
                 />
             </Col>
