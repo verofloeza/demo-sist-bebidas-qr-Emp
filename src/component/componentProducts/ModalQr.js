@@ -11,10 +11,10 @@ const ModalQr = ({modal, toggle}) => {
   // Función que se ejecuta cada vez que se decodifica un nuevo QR
   const handleDecode = (result) => {
 
-    const parteDespuesDeOrdenes = result.substring(20);
+    const parteDespuesDeOrdenes = result.substring(22);
     alert(parteDespuesDeOrdenes)
     // Redireccionar a la nueva URL
-    //history(parteDespuesDeOrdenes);
+    history(`../${parteDespuesDeOrdenes}`);
   };
 
   // Función que se ejecuta en caso de error en el escaneo
