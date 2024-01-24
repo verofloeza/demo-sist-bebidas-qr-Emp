@@ -14,7 +14,7 @@ const ModalQr = ({modal, toggle}) => {
     const parteDespuesDeOrdenes = result.substring('https://localhost:3001/'.length);
     alert(parteDespuesDeOrdenes)
     // Redireccionar a la nueva URL
-    navigate(parteDespuesDeOrdenes);
+    history(parteDespuesDeOrdenes);
   };
 
   // Función que se ejecuta en caso de error en el escaneo
