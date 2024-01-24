@@ -18,7 +18,7 @@ const ModalQr = ({modal, toggle}) => {
           
             <Col sm='12' >
                 <QrScanner
-                    onDecode={(result) => history(result.substring(48) )}//se elimna el dominio de la url
+                    onDecode={(result) => history(result.substring(25) )}
                     onError={(error) => setResult(error?.message)}
                 />
             </Col>
