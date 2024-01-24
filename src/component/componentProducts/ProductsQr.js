@@ -74,8 +74,8 @@ const ProductsQr = ({id, image, title, qty, discount, changesProducts, changesPr
           status === 1
           ? <tr>
                     <td><img className='files-gallery-item img-fluid' alt="img" src={image} width={50} /></td>
-                  <td>{title}</td>
-                  <td>
+                  <td style={{color: 'black'}}>{title}</td>
+                  <td style={{color: 'black'}}>
                     <div style={{flex: 1, flexDirection: 'row', justifyContent: 'center', alignContent: 'center'}}>
                       <InputGroup className="mb-3" style={{width: '150px'}}>
                                     <div addontype="prepend" className="input-group-prepend">
@@ -93,12 +93,12 @@ const ProductsQr = ({id, image, title, qty, discount, changesProducts, changesPr
                     </div>
                       
                   </td>
-                  <td>
+                  <td style={{color: 'black'}}>
                     <Button color="warning" className="sweet-6" name="alertWarning" onClick={DisplayalertButton}>
                               Confirmar
                             </Button>
                   </td>
-                  <th scope="row">{id}</th>
+                  <th scope="row" style={{color: 'black'}}>{id}</th>
             </tr>
           : ''
         }
