@@ -9,10 +9,10 @@ const ModalQr = ({modal, toggle}) => {
     const [ result, setResult ] = useState(null)
 
     // Función para cambiar el dominio de la URL
-  const cambiarDominio = (urlOriginal, nuevoDominio) => {
-    // Reemplazar el dominio actual con el nuevo dominio
-    return urlOriginal.replace(/^https:\/\/[^\/]+/, `https://${nuevoDominio}`);
-  };
+    const cambiarDominio = (urlOriginal, nuevoDominio) => {
+      // Reemplazar solo el dominio actual con el nuevo dominio
+      return urlOriginal.replace(/^(https:\/\/[^\/]+)(\/.*)?$/, `https://${nuevoDominio}$2`);
+    };
 
   // Función que se ejecuta cada vez que se decodifica un nuevo QR
   const handleDecode = (result) => {
