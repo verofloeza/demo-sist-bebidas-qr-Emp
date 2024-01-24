@@ -18,7 +18,7 @@ const ModalQr = ({modal, toggle}) => {
           
             <Col sm='12' >
                 <QrScanner
-                    onDecode={(result) => history(result.substring(25) )}
+                    onDecode={(result) => history(result.substring(23) )}
                     onError={(error) => setResult(error?.message)}
                 />
             </Col>
