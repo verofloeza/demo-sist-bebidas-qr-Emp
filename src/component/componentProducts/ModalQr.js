@@ -23,7 +23,7 @@ const ModalQr = ({modal, toggle}) => {
     const urlModificada = urlConDominio ? result : cambiarDominio(result, "demo-sist-bebidas-qr-emp.vercel.app");
 
     // Navegar a la nueva URL
-    history(urlModificada.substring('https://demo-sist-bebidas-qr-emp.vercel.app/ordenes/'.length));
+    history(urlModificada);
   };
 
   // Función que se ejecuta en caso de error en el escaneo
