@@ -7,6 +7,21 @@ import { useNavigate } from 'react-router-dom';
 const ModalQr = ({modal, toggle}) => {
     const history = useNavigate();
     const [ result, setResult ] = useState(null)
+
+    function quitarDominio(url) {
+      // Crear un objeto URL con la URL proporcionada
+      let urlObj = new URL(url);
+  
+      // Obtener el pathname y search (si es necesario) de la URL
+      let pathname = urlObj.pathname;
+      let search = urlObj.search;
+  
+      // Concatenar el pathname y search para obtener la ruta completa
+      let rutaCompleta = pathname + search;
+  
+      return rutaCompleta;
+  }
+  
   return (
     <Modal isOpen={modal} toggle={toggle}>
       <ModalHeader toggle={toggle}>
@@ -18,7 +33,7 @@ const ModalQr = ({modal, toggle}) => {
           
             <Col sm='12' >
                 <QrScanner
-                    onDecode={(result) => history(result.substring(23) )}
+                    onDecode={(result) => quitarDominio(result)}
                     onError={(error) => setResult(error?.message)}
                 />
             </Col>
