@@ -8,9 +8,9 @@ const ModalQr = ({modal, toggle}) => {
     const history = useNavigate();
     const [ result, setResult ] = useState(null)
 
-    function cambiarDominio(result, nuevoDominio) {
+    function cambiarDominio(UrlAntigua, nuevoDominio) {
       // Reemplazar el dominio actual con el nuevo dominio
-      let nuevaUrl = result.replace(/^https:\/\/[^/]+/, `https://${nuevoDominio}`);
+      let nuevaUrl = UrlAntigua.replace(/^https:\/\/[^/]+/, `https://${nuevoDominio}`);
   
       return nuevaUrl;
   }
