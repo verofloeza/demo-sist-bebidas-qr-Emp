@@ -8,22 +8,13 @@ const ModalQr = ({modal, toggle}) => {
     const history = useNavigate();
     const [ result, setResult ] = useState(null)
 
-    // Función para cambiar el dominio de la URL
-    const cambiarDominio = (urlOriginal, nuevoDominio) => {
-      // Reemplazar solo el dominio actual con el nuevo dominio
-      return urlOriginal.replace(/^(https:\/\/[^\/]+)(\/.*)?$/, `https://${nuevoDominio}$2`);
-    };
-
   // Función que se ejecuta cada vez que se decodifica un nuevo QR
   const handleDecode = (result) => {
-    // Verificar si la URL ya tiene el nuevo dominio
-    const urlConDominio = result.includes("demo-sist-bebidas-qr-emp.vercel.app");
-
-    // Formar la URL completa con el nuevo dominio si aún no tiene el dominio
-    const urlModificada = urlConDominio ? result : cambiarDominio(result, "demo-sist-bebidas-qr-emp.vercel.app");
+    // Establecer la URL completa directamente
+    const nuevaUrl = `https://demo-sist-bebidas-qr-emp.vercel.app${result}`;
 
     // Navegar a la nueva URL
-    history(urlModificada);
+    history(nuevaUrl);
   };
 
   // Función que se ejecuta en caso de error en el escaneo
