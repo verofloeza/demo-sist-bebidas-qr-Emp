@@ -16,8 +16,13 @@ const ModalQr = ({modal, toggle}) => {
 
   // Función que se ejecuta cada vez que se decodifica un nuevo QR
   const handleDecode = (result) => {
-    // Cambiar el dominio y navegar a la nueva URL
-    const urlModificada = cambiarDominio(result, "demo-sist-bebidas-qr-emp.vercel.app");
+    // Verificar si la URL ya tiene el nuevo dominio
+    const urlConDominio = result.includes("demo-sist-bebidas-qr-emp.vercel.app");
+
+    // Formar la URL completa con el nuevo dominio si aún no tiene el dominio
+    const urlModificada = urlConDominio ? result : cambiarDominio(result, "demo-sist-bebidas-qr-emp.vercel.app");
+
+    // Navegar a la nueva URL
     history(urlModificada);
   };
 
