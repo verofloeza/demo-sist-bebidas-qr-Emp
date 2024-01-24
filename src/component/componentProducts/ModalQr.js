@@ -18,7 +18,7 @@ const ModalQr = ({modal, toggle}) => {
   // Ejemplo de uso
   let nuevoDominio = "demo-sist-bebidas-qr-emp.vercel.app";
   
-  let urlModificada = cambiarDominio(urlOriginal, nuevoDominio);
+  let urlModificada = cambiarDominio(result, nuevoDominio);
     
   return (
     <Modal isOpen={modal} toggle={toggle}>
