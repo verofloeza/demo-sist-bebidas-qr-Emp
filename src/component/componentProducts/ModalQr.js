@@ -19,11 +19,8 @@ const ModalQr = ({modal, toggle}) => {
     // Extraer la parte de la URL después de 'https://demo-sist-bebidas-qr-emp.vercel.app/ordenes/'
     const parteDespuesDeOrdenes = result.substring('https://demo-sist-bebidas-qr-emp.vercel.app/ordenes/'.length);
 
-    // Construir la nueva URL
-    const nuevaUrl = `../${parteDespuesDeOrdenes}`;
-
     // Redireccionar a la nueva URL
-    history(nuevaUrl);
+    history(parteDespuesDeOrdenes);
   };
 
   // Función que se ejecuta en caso de error en el escaneo
