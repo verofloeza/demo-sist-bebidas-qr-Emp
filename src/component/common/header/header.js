@@ -28,7 +28,8 @@ const Header = (props) => {
                   if (!querySnapshot.empty) {
                     const datos = querySnapshot.docs[0]
                     if(datos.data().role === 'cliente'){
-                      Displayalert()
+                      Displayalert();
+                      await auth.signOut();
                       history(`./`);
                     }
                   }else{
