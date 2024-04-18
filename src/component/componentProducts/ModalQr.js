@@ -11,7 +11,7 @@ const ModalQr = ({modal, toggle}) => {
   // Función que se ejecuta cada vez que se decodifica un nuevo QR
   const handleDecode = (result) => {
 
-    const parteDespuesDeOrdenes = result.substring(22);
+    const parteDespuesDeOrdenes = result.substring(42);
     alert(parteDespuesDeOrdenes)
     // Redireccionar a la nueva URL
     history(`../${parteDespuesDeOrdenes}`);
